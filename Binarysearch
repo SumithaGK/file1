@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+int binarysearch(int arr[],int size,int target)
+{
+    int left=0;
+    int right=size-1;
+    while(left <= right)
+    {
+    int mid=left+(right-left)/2;
+    if(arr[mid]==target)
+    {
+        return mid;
+    }
+    else if(arr[mid]<target)
+    {
+return mid+1;
+        
+    }
+    else (arr[mid]>target);
+    {
+        return mid-1;
+    }
+    }
+    return -1;
+}
+int main()
+{
+    int size,target;
+    cout<<"enter the elements";
+    cin>>size;
+    int a[size];
+    cout<<"enter"<< size<<"sorted elements:";
+    for(int i=0;i<size;i++)
+    {
+        cin>>a[size];
+        
+}
+cout<<"enter the target element";
+cin>>target;
+int result=binarysearch(a,size,target);
+if(result!=1)
+{
+    cout<<"element found at index";
+}
+else
+{
+    cout<<"not found";
+}
+}
+
