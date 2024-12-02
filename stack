@@ -1,0 +1,82 @@
+#include<iostream>
+using namespace std;
+#define MAX 100
+class stack
+{
+    int top;
+    public:
+    int arr[MAX];
+stack()
+{
+    top=-1;
+}
+void push()
+{
+    if(top>=MAX-1)
+    {
+        cout<<"stack is overflow";
+    }
+    else
+    {
+        int num;
+        cout<<"enter num to push: ";
+        cin>>num;
+        top++;
+        arr[top]=num;
+        cout<<num <<" pushed into the stack";
+    }
+}
+    void pop()
+    {
+        if(top<0)
+        {
+            cout<<"stack is underflow"<<endl;
+        }
+        else
+        {
+            cout<<"popped element:"<<arr[top]<<endl;
+            top--;
+        }
+    }
+        void peek()
+        {
+            if(top<0)
+            {
+                cout<<"stack is empty"<<endl;
+            }
+            else
+            {
+                cout<<"topped element:"<<arr[top]<<endl;
+            }
+        }
+};
+            int main()
+            {
+                stack s;
+                int choice;
+                while(true)
+                {
+                cout<<"1.push\n2.pop\n3.peek\n";
+                cout<<"enter your choice: ";
+                cin>>choice;
+                
+                 switch(choice)
+                 {
+                    case 1:
+                    s.push();
+                    break;
+                    case 2:
+                    s.pop();
+                    break;
+                    case 3:
+                    s.peek();
+                    break;
+                    default:
+                   cout<<"invalid\n";
+                    break;
+                return 0;
+                }
+            }
+            return 0;
+            }
+            
