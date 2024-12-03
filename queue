@@ -1,0 +1,96 @@
+#include<iostream>
+using namespace std;
+#define MAX 100
+class queue
+{
+    int arr[MAX];
+    int front;
+    int rear;
+    public:
+    queue()
+    {
+        front=-1;
+        rear=-1;
+    }
+
+void insertElement()
+{
+    if(rear>=MAX-1)
+    {
+        cout<<"queue is overflow";
+    }
+else 
+{
+    int val;
+    cout<<"enter the element";
+    cin>>val;
+    if(front==-1)
+    {
+        front = 0;
+    }
+    rear++;
+    arr[rear]=val;
+    cout<<"inserted element";
+}
+}
+void deleteElement()
+{
+    if(front==-1||front>rear)
+    {
+        cout<<"queue is underflow";
+    }
+else
+{
+    cout<<"deleted element"<<arr[front]<<endl;
+    front++;
+    
+}
+}
+void print()
+{
+    if(front==-1||front>rear)
+    {
+        cout<<"queue is empty";
+    }
+else
+{
+    queue:
+    for(int i=front;i<=rear;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
+}
+};
+int main()
+{
+    queue q;
+    int choice;
+    
+    while(true)
+    {
+       cout<<"1.insert\2.delete\3.display\n";
+       cout<<"enter the chocie";
+    cin>>choice;
+        if(choice==0)
+        {
+        break;
+        }
+        else if(choice==1)
+        {
+        q.insertElement();
+        }
+        else if(choice==2)
+        {
+            q.deleteElement();
+        }
+        else if(choice==3)
+        {
+            q.print();
+        }
+        else
+        {
+        cout<<"INVALID";
+    }
+}
+}
